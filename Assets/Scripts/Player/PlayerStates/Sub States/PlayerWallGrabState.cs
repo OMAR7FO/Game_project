@@ -15,11 +15,13 @@ public class PlayerWallGrabState : PlayerTouchingWallState
         base.Enter();
         holdPosition = player.transform.position;
         HoldPosition();
+        player.SetClimpCollider();
     }
     public override void Exit()
     {
         base.Exit();
         player.RB.isKinematic = false;
+        player.SetNormalCollider();
     }
     public override void LogicalUpdate()
     {

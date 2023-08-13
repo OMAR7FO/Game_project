@@ -39,6 +39,7 @@ public class Player : MonoBehaviour
 
     [SerializeField] private Transform groundCheck;
     [SerializeField] private Transform wallCheck;
+    private GameObject fallDetector;
     #endregion
 
     #region Other Variables
@@ -47,11 +48,16 @@ public class Player : MonoBehaviour
 
     public int FacingDirection { get; private set; }
     public bool isAlive { get; private set; } = true;
+    public Vector2 ColliderSizeInClimp = new Vector2(0.8520679f, 1.746224f);
+    public Vector2 ColliderOffsetInclimp = new Vector2(0.02888966f, 0.8790523f);
+    public Vector2 NoramlColliderSize = new Vector2(1.146907f, 2.056184f);
+    public Vector2 NormalColliderOffSet = new Vector2(-0.06561136f, 1.071832f);
 
     private Vector2 workSpace;
     private float currentSpeed;
     public bool IsHoldingMovingPlatform { get; private set; }
     public Vector3 MovingPlatformPosition { get; private set; }
+
     
     #endregion
 
@@ -72,6 +78,8 @@ public class Player : MonoBehaviour
         PlayerDashState = new PlayerDashState(this, StateMachine, playerData, "dash");
         PlayerDashStateTwo = new PlayerDashStateTwo(this, StateMachine, playerData, "dash");
         PlayerDieState = new PlayerDieState(this, StateMachine, playerData, "die");
+        fallDetector = GameObject.FindGameObjectWithTag("FallDetector");
+        Time.timeScale = 1;
     }
     private void Start()
     {
@@ -80,7 +88,6 @@ public class Player : MonoBehaviour
         RB = GetComponent<Rigidbody2D>();
         Anim = GetComponent<Animator>();
         BoxCollider = GetComponent<CapsuleCollider2D>();
-
         DashDirectionIndicator = transform.Find("DashDirectionIndicator");
         FacingDirection = 1;
         StateMachine.Initalize(PlayerIdleState);
@@ -90,7 +97,7 @@ public class Player : MonoBehaviour
         if (!isAlive)
             return;
         CurrentVelocity = RB.velocity;
-        Die();
+        fallDetector.transform.position = new Vector2(transform.position.x, fallDetector.transform.position.y);
         StateMachine.CurrentState.LogicalUpdate();
     }
     private void FixedUpdate()
@@ -169,6 +176,16 @@ public class Player : MonoBehaviour
         FacingDirection *= -1;
         transform.Rotate(0.0f, 180.0f, 0.0f);
     }
+    public void SetClimpCollider()
+    {
+        BoxCollider.size = ColliderSizeInClimp;
+        BoxCollider.offset = ColliderOffsetInclimp;
+    }
+    public void SetNormalCollider()
+    {
+        BoxCollider.size = NoramlColliderSize;
+        BoxCollider.offset = NormalColliderOffSet;
+    }
     private void AnimationTrigger() => StateMachine.CurrentState.AnimationTriggers();
     // trigger this function if you want to wait the animation to end before moving to next state 
     // you can trigger this animation by animation event
@@ -192,7 +209,7 @@ public class Player : MonoBehaviour
     {
         IsHoldingMovingPlatform = false;
     }
-    private void Die()
+    /*private void Die()
     {
         if (BoxCollider.IsTouchingLayers(LayerMask.GetMask("Hazard")))
         {
@@ -201,6 +218,6 @@ public class Player : MonoBehaviour
             SetVelocityX(0);
             SetVelocityY(0);
         }
-    }
+    }*/
     #endregion
 }
