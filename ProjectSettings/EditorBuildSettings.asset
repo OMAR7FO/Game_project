@@ -6,6 +6,25 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: b71d6b0dbc938eb4faf32e1d313ea846
+  - enabled: 1
     path: Assets/Scenes/Level 1.unity
     guid: 2cda990e2423bbf4892e6590ba056729
-  m_configObjects: {}
+  - enabled: 1
+    path: Assets/Scenes/Level 2.unity
+    guid: 98b97faa787867b41a9f7874d2410ec8
+  - enabled: 1
+    path: Assets/Scenes/Level 3.unity
+    guid: 5a8add9ec6318304dadf4738940b21f5
+  - enabled: 1
+    path: Assets/Mini Games/Laser Defender/Scenes/Game.unity
+    guid: 61b2ee2c7b12bf848bf9e7a7a5adb6cf
+  - enabled: 1
+    path: Assets/Mini Games/Laser Defender/Scenes/Main Menu.unity
+    guid: 3a9510b647acd674aa8a09412cefee20
+  - enabled: 1
+    path: Assets/Mini Games/Laser Defender/Scenes/Game Over.unity
+    guid: b9ad8d2af321074459850ac7bcdcff8d
+  m_configObjects:
+    com.unity.input.settings: {fileID: 11400000, guid: d413da28fb7076241b59ba01220a6cf3, type: 2}
