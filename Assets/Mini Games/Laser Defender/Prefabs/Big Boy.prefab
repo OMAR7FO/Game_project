@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -337164069223352407}
   - component: {fileID: 2876735915555765061}
   - component: {fileID: 2891856390037694674}
-  m_Layer: 7
+  m_Layer: 13
   m_Name: Big Boy
   m_TagString: Untagged
   m_Icon: {fileID: 0}

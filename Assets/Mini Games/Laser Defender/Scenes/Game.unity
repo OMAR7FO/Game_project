@@ -195,6 +195,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: StarField
       objectReference: {fileID: 0}
+    - target: {fileID: 2269427303721673179, guid: 040523ea50fe6a944b91b981fdd90ecf, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 2269427303721673182, guid: 040523ea50fe6a944b91b981fdd90ecf, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -427,10 +431,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2843701305763392712, guid: 6066724ef9d46ac42bce42e3bd27f099, type: 3}
-      propertyPath: laserPrefab
-      value: 
-      objectReference: {fileID: 5474120227784937141, guid: 84a3d5f35d94c724496f5a7f7b1624a9, type: 3}
     - target: {fileID: 2843701305763392715, guid: 6066724ef9d46ac42bce42e3bd27f099, type: 3}
       propertyPath: m_RootOrder
       value: 2

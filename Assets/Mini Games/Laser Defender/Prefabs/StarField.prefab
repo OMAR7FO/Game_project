@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2269427303721673182}
   - component: {fileID: 2269427303721673181}
   - component: {fileID: 2269427303721673180}
-  m_Layer: 3
+  m_Layer: 11
   m_Name: StarField
   m_TagString: Untagged
   m_Icon: {fileID: 0}

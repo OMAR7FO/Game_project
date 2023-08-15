@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2843701305763392714}
   - component: {fileID: 2843701305763392712}
   - component: {fileID: 2515837548094069587}
-  m_Layer: 6
+  m_Layer: 12
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -107,7 +107,7 @@ MonoBehaviour:
   volumeShootinSound: 0.25
   projectTileSpeed: 20
   projecttileFirePeriod: 0.1
-  laserPrefab: {fileID: 4458549662063790364, guid: 1b7c8d20418d37146857064ffb3f339d, type: 3}
+  laserPrefab: {fileID: 5474120227784937141, guid: 84a3d5f35d94c724496f5a7f7b1624a9, type: 3}
 --- !u!60 &2515837548094069587
 PolygonCollider2D:
   m_ObjectHideFlags: 0

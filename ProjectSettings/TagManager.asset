@@ -19,11 +19,11 @@ TagManager:
   - Wall
   - Background
   - Hazard
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Laser Defender Background
+  - Laser Defender Player
+  - Laser Defender Enemy
+  - Laser Defender Enemy Project Tile
+  - Laser Defender Player Project Tile
   - 
   - 
   - 
